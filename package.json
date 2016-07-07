@@ -1,0 +1,11 @@
+{
+  "name": "sqs-loop",
+  "version": "1.0.0",
+  "description": "AWS SQS consumer helper for the gentleman that uses promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henrique Grolli",
+  "license": "MIT"
+}
