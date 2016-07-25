@@ -1,0 +1,70 @@
+{
+    "env": {
+        "mocha": true
+    },
+    "parserOptions": {
+        "sourceType": "script"
+    },
+    "globals": {
+        "chubaca": true,
+        "expect": true,
+        "sinon": true,
+        "proxyquire": true,
+        "Bluebird": true,
+        "dynamo": true,
+        "fixtures": true,
+        "doneAsync": true
+    },
+    "extends": "airbnb-base",
+    "plugins": [
+        "filenames"
+    ],
+    "rules": {
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "filenames/match-regex": [
+            "error",
+            "^[a-z0-9-.]+$"
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "max-len": [
+            "error",
+            120
+        ],
+        "no-console": [
+            "error"
+        ],
+        "prefer-arrow-callback": [
+            "error",
+            {
+                "allowNamedFunctions": true
+            }
+        ],
+        "prefer-rest-params": [
+            "off"
+        ],
+        "quote-props": [
+            "error",
+            "consistent-as-needed"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ]
+    }
+}
