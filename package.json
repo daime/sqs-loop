@@ -1,12 +1,12 @@
 {
   "name": "sqs-loop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AWS SQS consumer helper for the gentleman that uses promises",
-  "main": "index.js",
+  "main": "sqs-loop.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "git@github.com:guax/sqs-loop",
+  "repository": "git@github.com:daime/sqs-loop",
   "author": "Henrique Grolli",
   "license": "MIT",
   "devDependencies": {

@@ -3,9 +3,6 @@
 const aws = require('aws-sdk');
 const bb = require('bluebird');
 
-const sqs = new aws.SQS();
-bb.promisifyAll(sqs);
-
 const STOP_STRING = 'PLXSTAHPKTHXBYE';
 const KEEP_STRING = 'CHANGEFRIGHTENME';
 function stop_loop() {
@@ -17,15 +14,17 @@ function keep() {
 }
 
 function readMessage(params) {
-    return sqs.receiveMessageAsync(params);
+    const sqs = new aws.SQS();
+    return sqs.receiveMessage(params).promise();
 }
 
 function removeMessage(url, msg) {
+    const sqs = new aws.SQS();
     var params = {
         QueueUrl: url,
         ReceiptHandle: msg.ReceiptHandle
     };
-    return sqs.deleteMessageAsync(params);
+    return sqs.deleteMessage(params).promise();
 }
 
 function readMessageLoop(params, cb) {
@@ -79,11 +78,12 @@ function readMessageLoop(params, cb) {
 }
 
 function loop(params, cb) {
+    const sqs = new aws.SQS();
     let promise = bb.resolve(params.QueueUrl);
 
     if (!params.QueueUrl) {
         promise = promise
-            .then(() => sqs.createQueueAsync({ QueueName: params.QueueName }))
+            .then(() => sqs.createQueue({ QueueName: params.QueueName }).promise())
             .then(res => res.QueueUrl);
     }
 
@@ -98,4 +98,4 @@ function loop(params, cb) {
         .then(params => readMessageLoop(params, cb));
 }
 
-module.exports = { loop, stop: stop_loop, keep };
+module.exports = { aws, loop, stop: stop_loop, keep };
