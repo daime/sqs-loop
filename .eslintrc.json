@@ -5,16 +5,6 @@
     "parserOptions": {
         "sourceType": "script"
     },
-    "globals": {
-        "chubaca": true,
-        "expect": true,
-        "sinon": true,
-        "proxyquire": true,
-        "Bluebird": true,
-        "dynamo": true,
-        "fixtures": true,
-        "doneAsync": true
-    },
     "extends": "airbnb-base",
     "plugins": [
         "filenames"
