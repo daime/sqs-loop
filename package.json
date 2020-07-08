@@ -4,22 +4,18 @@
   "description": "AWS SQS consumer helper for the gentleman that uses promises",
   "main": "sqs-loop.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./sqs-loop.test.js"
   },
   "repository": "git@github.com:daime/sqs-loop",
   "author": "Henrique Grolli",
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk-mock": "^1.3.0",
+    "aws-sdk-mock": "^1.7.0",
     "chai": "^4.2.0",
-    "eslint": "^4.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-filenames": "^1.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "mocha": "^6.2.0"
+    "mocha": "^8.0.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.4.9",
+    "aws-sdk": "^2.711.0",
     "bluebird": "^3.4.1"
   }
 }
